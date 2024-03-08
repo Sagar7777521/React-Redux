@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  numofCakes: 10,
+  numofCakes: 20, // default number of cakes in the store.
 };
 
 const cakeSlice = createSlice({
