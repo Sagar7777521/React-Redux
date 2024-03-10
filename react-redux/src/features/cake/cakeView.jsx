@@ -1,14 +1,14 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { ordered, restocked } from "./cakeSlice";
 
-const Cakeview = () => {
-  const numofCakes = useSelector((state) => state.cake.numofCakes);
+export const CakeView = () => {
+  const numofCakes = useSelector((state) => state.cake.numOfCakes);
+  const dispatch = useDispatch();
   return (
     <div>
-      <h2>Number of Cakes- {numofCakes}</h2>
-      <button>Order Cakes</button> {"   "}
-      <button>Restock Cakes</button>
+      <h2>Number of cakes - {numofCakes}</h2>
+      <button onClick={() => dispatch(ordered())}>Order Cake</button>
+      <button onClick={() => dispatch(restocked(5))}>Restock Cakes</button>
     </div>
   );
 };
-
-export default Cakeview;
